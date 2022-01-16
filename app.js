@@ -7,23 +7,25 @@ const pointer = document.querySelector('.pointer');
 const stepText = document.querySelector('.step');
 const timeRemaining = document.querySelector('.remaining');
 
+let pauseState = false;
 let duration = 4000;
 
 //toggle pause when space is pressed
-document.addEventListener('keydown', event => {
-    if (event.code === 'Space') {
-        console.log('Space pressed');
-        pause();
-    }
-})
+// document.addEventListener('keydown', event => {
+//     if (event.code === 'Space') {
+//         console.log('Space pressed');
+//         pause();
+//     }
+// })
 
-function pause() {
-    pointer.classList.toggle('pause');
-    mainCircle.classList.toggle('pause');
-    for (let circle of bgCircles) {
-        circle.classList.toggle('pause');
-    }
-}
+// function pause() {
+//     pauseState = !pauseState;
+//     pointer.classList.toggle('pause');
+//     mainCircle.classList.toggle('pause');
+//     for (let circle of bgCircles) {
+//         circle.classList.toggle('pause');
+//     }
+// }
 
 function exhale(duration = 4) {
     stepText.innerHTML = "exhale";
@@ -74,6 +76,22 @@ function breatheAnimation() {
 breatheAnimation();
 
 function updateCountdown() {
-    console.log("update countdown");
+    timeRemaining.innerHTML = "4 seconds";
+    setTimeout(() => {
+        timeRemaining.innerHTML = "3 seconds";
+        setTimeout(() => {
+            timeRemaining.innerHTML = "2 seconds";
+            setTimeout(() => {
+                timeRemaining.innerHTML = "1 second";
 
+            }, 1000)
+
+        }, 1000)
+
+    }, 1000)
 }
+
+/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+particlesJS.load('particles-js', './particles.json', function () {
+    console.log('callback - particles.js config loaded');
+});
