@@ -25,6 +25,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 main {
@@ -208,4 +209,70 @@ main {
     position: absolute;
     width: 100%;
     height: 100vh;
+}
+
+@media only screen and (max-width: 710px) {    
+    main {
+        height: 250px;
+        width: 250px;
+    }
+
+    .step {
+        font-size: 1.7rem;
+        letter-spacing: 5px;
+        letter-spacing: 0.2em;
+        margin: 0px;
+        margin-top: 2rem;
+    }
+
+    .remaining {
+        font-size: 0.9rem;
+        margin-top: 2px;
+        margin-bottom: 15px;
+        letter-spacing: 0.05em;
+    }
+
+    .box {
+        width: 110px;
+        height: 110px;
+        border-radius: 5px;
+    }
+
+    .pointer {
+        width: 16px;
+        height: 16px;
+        position: relative;
+        display: inline-block;
+        top: 102px;
+        left: -8px;
+        animation: pointerMovement linear 16s infinite normal;
+    }
+
+    @keyframes pointerMovement {
+        0% {
+            top: 102px;
+            left: -8px;
+        }
+        25% {
+            top: -8px;
+            left: -8px;
+        }
+        50% {
+            top: -15px;
+            left: 102px;
+        }
+        75% {
+            top: 102px;
+            left: 102px;
+        }
+        100% {
+            top: 102px;
+            left: -8px;
+        }
+    }
+
+    .backgroundCircles {
+        width: 400px;
+        height: 400px;
+    }
 }
