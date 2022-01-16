@@ -109,14 +109,14 @@ main {
 }
 
 .exhaleShrink {
-    animation: inhaleGrow 4s linear infinite normal;
+    animation: inhaleGrow 4s linear infinite reverse;
 }
 
 .inhaleHold {
     transform: scale(1.1);
 }
 
-.exnhaleHold {
+.exhaleHold { 
     transform: scale(1);
 }
 
@@ -163,11 +163,11 @@ main {
 
 .inhaleBg span {
     border-radius: 50%;
-    animation: breathe 4s linear;
+    animation: breathe 4s linear infinite;
 }
 
 .exhaleBg span {
-    animation: breathe 4s linear reverse;
+    animation: breathe 4s linear reverse infinite;
 }
 
 .backgroundCircles span:nth-child(1) {
