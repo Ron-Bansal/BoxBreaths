@@ -53,7 +53,7 @@ main {
 .remaining {
     font-size: 1.2rem;
     margin-top: 2px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     letter-spacing: 0.05em;
     text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.45);
 }
@@ -76,8 +76,32 @@ main {
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.05), 
             inset 1px 1px 15px rgba(0, 0, 0, 0.1);
     border-radius: 50%;
-    top: 80px;
+    top: 235px;
     left: -15px;
+    animation: pointerMovement linear 16s infinite normal;
+}
+
+@keyframes pointerMovement {
+    0% {
+        top: 235px;
+        left: -15px;
+    }
+    25% {
+        top: -15px;
+        left: -15px;
+    }
+    50% {
+        top: -15px;
+        left: 235px;
+    }
+    75% {
+        top: 235px;
+        left: 235px;
+    }
+    100% {
+        top: 235px;
+        left: -15px;
+    }
 }
 
 .bg {
@@ -89,6 +113,12 @@ main {
     left: 20px;
     border-radius: 50%;
     background: rgba(136, 184, 164, 0.4);
+}
+
+.backgrounds {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .bg1 {
@@ -106,8 +136,41 @@ main {
     height: 650px;
 }
 
-.backgrounds {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.inhaleGrow {
+    animation: inhaleGrow 4s linear infinite normal;
+}
+
+.exhaleShrink {
+    animation: inhaleGrow 4s linear infinite normal;
+}
+
+.inhaleHold {
+    transform: scale(1.1);
+}
+
+.exnhaleHold {
+    transform: scale(1);
+}
+
+@keyframes inhaleGrow {
+    from {
+        transform: scale(1);
+    } 
+    to {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes exhaleShrink {
+    from {
+        transform: scale(1.1);
+    } 
+    to {
+        transform: scale(1);
+    }
+}
+
+.pause.pause {
+    animation-play-state: paused;
 }
